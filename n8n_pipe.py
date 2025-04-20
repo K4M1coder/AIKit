@@ -13,6 +13,15 @@ import os
 import time
 import requests
 
+def extract_event_info(event_emitter) -> tuple[Optional[str], Optional[str]]:
+    if not event_emitter or not event_emitter.__closure__:
+        return None, None
+    for cell in event_emitter.__closure__:
+        if isinstance(request_info := cell.cell_contents, dict):
+            chat_id = request_info.get("chat_id")
+            message_id = request_info.get("message_id")
+            return chat_id, message_id
+    return None, None
 
 class Pipe:
     class Valves(BaseModel):
