@@ -143,15 +143,15 @@ quickly get started with building self-hosted AI workflows.
 ### For Nvidia GPU users
 
 ```
-git clone https://github.com/coleam00/ai-agents-masterclass.git
-cd ai-agents-masterclass/local-ai-packaged
+git clone https://github.com/K4M1coder/AIKit.git
+cd AIKit/local-ai-packaged
 docker compose --profile gpu-nvidia up -d
 ```
 
 ### For AMD GPU Users
 ```
-git clone https://github.com/coleam00/ai-agents-masterclass.git
-cd ai-agents-masterclass/local-ai-packaged
+git clone https://github.com/K4M1coder/AIKit.git
+cd AIKit/local-ai-packaged
 docker compose --profile gpu-amd up -d
 ```
 
@@ -170,8 +170,8 @@ If you want to run Ollama on your mac, check the
 for installation instructions, and run the starter kit as follows:
 
 ```
-git clone https://github.com/coleam00/ai-agents-masterclass.git
-cd ai-agents-masterclass/local-ai-packaged
+git clone https://github.com/K4M1coder/AIKit.git
+cd AIKit/local-ai-packaged
 docker compose up -d
 ```
 
@@ -181,8 +181,8 @@ by using `http://host.docker.internal:11434/` as the host.
 ### For everyone else
 
 ```
-git clone https://github.com/coleam00/ai-agents-masterclass.git
-cd ai-agents-masterclass/local-ai-packaged
+git clone https://github.com/K4M1coder/AIKit.git
+cd AIKit/local-ai-packaged
 docker compose --profile cpu up -d
 ```
 
