@@ -69,6 +69,8 @@ quickly get started with building self-hosted AI workflows.
 | ✅ [**GitIngest**](https://github.com/dschmura/gitingest) | 3003 | • Code analysis & indexing<br>• Repository vectorization<br>• Search API interface | http://localhost:3003 |
 | ✅ [**CrewAI Studio**](https://github.com/joaomdmoura/crewAI) | 8501 | • AI team agents orchestration<br>• Task planning & collaboration<br>• Multi-agent workflows | http://localhost:8501 |
 | ✅ [**PostgreSQL**](https://www.postgresql.org/) | 5432 | • Workflow data storage<br>• Credential management<br>• State persistence | Internal access |
+| ✅ [**ConfyUI**](https://www.postgresql.org/) | 5432 | • image and video workflow<br>• Credential management<br>• State persistence | http://localhost:8188  |
+| ✅ [**ElasticSearch**](https://www.postgresql.org/) | 5432 | • Workflow data storage<br>• Credential management<br>• State persistence | Internal access |
 
 
 ### 🛠️ What you can build
@@ -266,6 +268,12 @@ you copied in a previous step.
 > First-time setup may require waiting for Ollama to download models. Check docker logs for progress:
 ```bash
 docker compose logs -f ollama
+```
+
+### ELK
+1. import dashboards with filebeat
+```bash
+docker compose exec filebeat filebeat setup -e
 ```
 
 ## 🔄 Upgrading
