@@ -1,0 +1,19 @@
+FROM node:18-alpine
+
+# Install Docker client - needed to communicate with the host Docker
+RUN apk add --no-cache docker-cli
+
+WORKDIR /app
+
+# Install dependencies first (for better caching)
+COPY package.json package-lock.json* ./
+RUN npm install
+
+# Copy the rest of the application
+COPY . .
+
+# Expose the port the server runs on
+EXPOSE 3001
+
+# Command to run the server in development mode
+CMD ["npm", "run", "dev"]

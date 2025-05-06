@@ -8,9 +8,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="img/favicon.png">
+    <style>
+        .react-dashboard-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .react-dashboard-button {
+            background-color: #61dafb;
+            color: #282c34;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .react-dashboard-button:hover {
+            background-color: #21a8f3;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .react-dashboard-button i {
+            margin-right: 8px;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid">
+        <div class="react-dashboard-link">
+            <a href="http://localhost:8080" target="_blank" class="react-dashboard-button">
+                <i class="fab fa-react"></i> Try the New React Dashboard
+            </a>
+        </div>
+        
         <header class="row bg-dark text-white py-4">
             <div class="col-12 text-center">
                 <h1><i class="fas fa-robot"></i> AIKit Dashboard</h1>

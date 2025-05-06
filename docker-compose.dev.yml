@@ -1,0 +1,57 @@
+version: '3.9'
+
+services:
+  aikit-dashboard-dev:
+    build:
+      context: ./aikit-dashboard
+      dockerfile: Dockerfile.dev
+    container_name: aikit-dashboard-dev
+    hostname: aikit-dashboard-dev
+    volumes:
+      - ./aikit-dashboard:/app
+      - /app/node_modules
+    ports:
+      - "3100:3000"  # Changed from 3000:3000 to avoid conflict with open-webui
+    environment:
+      - NODE_ENV=development
+      - VITE_API_BASE_URL=http://localhost:3101/api  # Updated to match new API port
+      - VITE_REFRESH_INTERVAL=5000
+      - CHOKIDAR_USEPOLLING=true # Enable polling for file changes in Docker
+    networks:
+      - dev-network
+      - AIKit
+    command: npm run dev
+    stdin_open: true # For React interactive mode
+    tty: true # For color output
+
+  aikit-api-server-dev:
+    build:
+      context: ./aikit-dashboard/server
+      dockerfile: Dockerfile.dev
+    container_name: aikit-api-server-dev
+    hostname: aikit-api-server-dev
+    volumes:
+      - ./aikit-dashboard/server:/app
+      - /app/node_modules
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "3101:3001"  # Changed from 3001:3001 to avoid potential conflicts
+      - "9229:9229"  # Node.js debug port
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+      - DOCKER_SOCKET_PATH=/var/run/docker.sock
+      - LOG_LEVEL=debug
+      - CORS_ORIGIN=http://localhost:3100  # Updated to match new frontend port
+    networks:
+      - dev-network
+      - AIKit
+    command: npm run dev:debug # Use a debug script
+    depends_on:
+      - aikit-dashboard-dev
+
+networks:
+  dev-network:
+    driver: bridge
+  AIKit:
+    external: true
