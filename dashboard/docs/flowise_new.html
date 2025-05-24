@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowise - AIKit Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <i class="fas fa-cube me-2"></i>AIKit
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#overview">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quick-start">Quick Start</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#configuration">Configuration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#use-cases">Use Cases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#useful-links">Useful Links</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#related-services">Related Services</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h1 class="card-title mb-0">
+                            <i class="fas fa-share-alt me-2"></i>Flowise Documentation
+                        </h1>
+                    </div>
+                    <div class="card-body">
+                        <section id="overview">
+                            <h2>Overview</h2>
+                            <p>Flowise is a drag & drop UI to build your customized LLM flow. It allows you to build conversational AI applications using a visual interface, making it easy to create complex AI workflows without coding.</p>
+                            
+                            <div class="alert alert-info">
+                                <strong>Key Benefits:</strong>
+                                <ul class="mb-0">
+                                    <li>Visual drag-and-drop interface</li>
+                                    <li>No-code LLM application development</li>
+                                    <li>Support for multiple LLM providers</li>
+                                    <li>Built-in vector database integration</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section id="quick-start" class="mt-4">
+                            <h2>Quick Start</h2>
+                            <ol>
+                                <li>Access Flowise through the AIKit dashboard</li>
+                                <li>Create a new chatflow using the visual editor</li>
+                                <li>Drag and connect nodes to build your workflow</li>
+                                <li>Configure your LLM and other components</li>
+                                <li>Test and deploy your AI application</li>
+                            </ol>
+                        </section>
+
+                        <section id="configuration" class="mt-4">
+                            <h2>Configuration</h2>
+                            <p>Flowise configuration involves several key components:</p>
+                            <ul>
+                                <li><strong>LLM Models:</strong> Configure OpenAI, Anthropic, or local models</li>
+                                <li><strong>Vector Stores:</strong> Set up Pinecone, Chroma, or other vector databases</li>
+                                <li><strong>Memory:</strong> Configure conversation memory and context</li>
+                                <li><strong>Tools:</strong> Add custom tools and integrations</li>
+                            </ul>
+                        </section>
+
+                        <section id="features" class="mt-4">
+                            <h2>Features</h2>
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="fas fa-mouse-pointer me-2"></i>Drag & Drop Interface</h5>
+                                            <p class="card-text">Build AI workflows visually with an intuitive drag-and-drop interface.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="fas fa-brain me-2"></i>Multiple LLM Support</h5>
+                                            <p class="card-text">Integrate with various LLM providers including OpenAI, Anthropic, and local models.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="fas fa-database me-2"></i>Vector Database Integration</h5>
+                                            <p class="card-text">Built-in support for popular vector databases for RAG applications.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="fas fa-memory me-2"></i>Conversation Memory</h5>
+                                            <p class="card-text">Maintain context across conversations with built-in memory management.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="use-cases" class="mt-4">
+                            <h2>Use Cases</h2>
+                            <div class="list-group">
+                                <div class="list-group-item">
+                                    <strong>Chatbot Development:</strong> Create intelligent chatbots for customer service and support
+                                </div>
+                                <div class="list-group-item">
+                                    <strong>RAG Applications:</strong> Build retrieval-augmented generation systems for document Q&A
+                                </div>
+                                <div class="list-group-item">
+                                    <strong>Content Generation:</strong> Develop AI-powered content creation workflows
+                                </div>
+                                <div class="list-group-item">
+                                    <strong>Data Analysis:</strong> Create AI assistants for data analysis and insights
+                                </div>
+                                <div class="list-group-item">
+                                    <strong>Workflow Automation:</strong> Automate business processes with AI-powered decision making
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="useful-links" class="mt-4">
+                            <h2>Useful Links</h2>
+                            <div class="d-grid gap-2">
+                                <a href="https://flowiseai.com/" class="btn btn-outline-primary" target="_blank">
+                                    <i class="fas fa-globe me-2"></i>Official Flowise Website
+                                </a>
+                                <a href="https://docs.flowiseai.com/" class="btn btn-outline-primary" target="_blank">
+                                    <i class="fas fa-book me-2"></i>Flowise Documentation
+                                </a>
+                                <a href="https://github.com/FlowiseAI/Flowise" class="btn btn-outline-primary" target="_blank">
+                                    <i class="fab fa-github me-2"></i>Flowise GitHub Repository
+                                </a>
+                                <a href="https://docs.flowiseai.com/getting-started" class="btn btn-outline-primary" target="_blank">
+                                    <i class="fas fa-rocket me-2"></i>Getting Started Guide
+                                </a>
+                            </div>
+                        </section>
+
+                        <section id="related-services" class="mt-4">
+                            <h2>Related Services</h2>
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="fas fa-comments me-2"></i>Open WebUI</h5>
+                                            <p class="card-text">Complementary chat interface that can work alongside Flowise for different AI interaction patterns.</p>
+                                            <a href="openwebui.html" class="btn btn-primary">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="fas fa-brain me-2"></i>Ollama</h5>
+                                            <p class="card-text">Local LLM provider that can be integrated with Flowise for on-premise AI solutions.</p>
+                                            <a href="ollama.html" class="btn btn-primary">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p>&copy; AIKit Documentation © 2025</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Highlight active section in navigation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

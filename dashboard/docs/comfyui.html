@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComfyUI Documentation - AIKit</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="../img/favicon.png">
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="row bg-dark text-white py-4">
+            <div class="col-12 text-center">
+                <h1><i class="fas fa-robot"></i> AIKit Documentation</h1>
+                <p class="lead">Internal documentation for AIKit services</p>
+            </div>
+        </header>
+
+        <div class="row my-4">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white d-flex align-items-center">
+                        <i class="fas fa-image me-2"></i>
+                        <h2 class="mb-0">ComfyUI Documentation</h2>
+                    </div>
+                    
+                    <div class="card-body">
+                        <nav aria-label="breadcrumb" class="mb-4">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> Dashboard</a></li>
+                                <li class="breadcrumb-item active">ComfyUI Documentation</li>
+                            </ol>
+                        </nav>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="sidebar-nav">
+                                    <div class="list-group mb-4">
+                                        <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                                        <a href="#quickstart" class="list-group-item list-group-item-action">Quick Start</a>
+                                        <a href="#configuration" class="list-group-item list-group-item-action">Configuration</a>
+                                        <a href="#features" class="list-group-item list-group-item-action">Features</a>
+                                        <a href="#usecases" class="list-group-item list-group-item-action">Use Cases</a>
+                                        <a href="#links" class="list-group-item list-group-item-action">Useful Links</a>
+                                        <a href="#related" class="list-group-item list-group-item-action">Related Services</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-9">
+                                <section id="overview">
+                                    <h3>Overview</h3>
+                                    <p>ComfyUI is a powerful and modular stable diffusion GUI and backend. It's designed to be a node-based interface for creating complex image generation and manipulation workflows.</p>
+                                </section>
+
+                                <section id="quickstart" class="mt-4">
+                                    <h3>Quick Start</h3>
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <ol class="mb-0">
+                                                <li>Access ComfyUI at <a href="http://localhost:8188" class="btn btn-sm btn-primary"><i class="fas fa-external-link-alt"></i> localhost:8188</a></li>
+                                                <li>Load a checkpoint model or download one from the queue manager</li>
+                                                <li>Create a workflow by connecting nodes in the interface</li>
+                                                <li>Configure your prompt and generation settings</li>
+                                                <li>Queue the prompt to generate images</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section id="configuration" class="mt-4">
+                                    <h3>Configuration</h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Environment Variable</th>
+                                                    <th>Value</th>
+                                                    <th>Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>COMFYUI_PORT</code></td>
+                                                    <td>8188</td>
+                                                    <td>Web interface port</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>COMFYUI_LISTEN</code></td>
+                                                    <td>0.0.0.0</td>
+                                                    <td>Listen address for external access</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>CUDA_VISIBLE_DEVICES</code></td>
+                                                    <td>0</td>
+                                                    <td>GPU device selection</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </section>
+
+                                <section id="features" class="mt-4">
+                                    <h3>Features</h3>
+                                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><i class="fas fa-project-diagram"></i> Node-Based Interface</h5>
+                                                    <p class="card-text">Visual workflow creation with connected nodes</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><i class="fas fa-magic"></i> Advanced Workflows</h5>
+                                                    <p class="card-text">Complex image generation and manipulation pipelines</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><i class="fas fa-bolt"></i> GPU Accelerated</h5>
+                                                    <p class="card-text">Optimized for CUDA and high-performance generation</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><i class="fas fa-puzzle-piece"></i> Extensible</h5>
+                                                    <p class="card-text">Custom nodes and extensions support</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section id="usecases" class="mt-4">
+                                    <h3>Common Use Cases</h3>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><i class="fas fa-palette"></i> AI-powered image generation</li>
+                                        <li class="list-group-item"><i class="fas fa-edit"></i> Image-to-image transformation</li>
+                                        <li class="list-group-item"><i class="fas fa-mask"></i> Inpainting and outpainting</li>
+                                        <li class="list-group-item"><i class="fas fa-video"></i> Animation and video generation</li>
+                                    </ul>
+                                </section>
+
+                                <section id="links" class="mt-4">
+                                    <h3>Useful Links</h3>
+                                    <div class="d-grid gap-2">
+                                        <a href="https://github.com/comfyanonymous/ComfyUI" class="btn btn-outline-primary" target="_blank">
+                                            <i class="fas fa-book"></i> Official Documentation
+                                        </a>
+                                        <a href="https://github.com/comfyanonymous/ComfyUI" class="btn btn-outline-dark" target="_blank">
+                                            <i class="fab fa-github"></i> GitHub Repository
+                                        </a>
+                                        <a href="https://comfyworkflows.com/" class="btn btn-outline-info" target="_blank">
+                                            <i class="fas fa-cloud"></i> Community Workflows
+                                        </a>
+                                    </div>
+                                </section>
+
+                                <section id="related" class="mt-4">
+                                    <h3>Related Services</h3>
+                                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                                        <!-- Ollama -->
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        <i class="fas fa-brain"></i> Ollama
+                                                    </h5>
+                                                    <p class="card-text">Local LLM service for text-to-image prompting assistance</p>
+                                                    <div class="d-flex gap-2">
+                                                        <a href="/docs/ollama.html" class="btn btn-outline-info">
+                                                            <i class="fas fa-file-alt"></i> Internal Docs
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- n8n -->
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        <i class="fas fa-code-branch"></i> n8n
+                                                    </h5>
+                                                    <p class="card-text">Workflow automation for batch image processing</p>
+                                                    <div class="d-flex gap-2">
+                                                        <a href="/docs/n8n.html" class="btn btn-outline-info">
+                                                            <i class="fas fa-file-alt"></i> Internal Docs
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Jupyter -->
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        <i class="fas fa-code"></i> Jupyter
+                                                    </h5>
+                                                    <p class="card-text">Interactive experimentation with ComfyUI APIs</p>
+                                                    <div class="d-flex gap-2">
+                                                        <a href="/docs/jupyter.html" class="btn btn-outline-info">
+                                                            <i class="fas fa-file-alt"></i> Internal Docs
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Open WebUI -->
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        <i class="fas fa-comments"></i> Open WebUI
+                                                    </h5>
+                                                    <p class="card-text">Chat interface for AI-assisted image creation workflows</p>
+                                                    <div class="d-flex gap-2">
+                                                        <a href="/docs/openwebui.html" class="btn btn-outline-info">
+                                                            <i class="fas fa-file-alt"></i> Internal Docs
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">AIKit Documentation &copy; 2025</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('.sidebar-nav .list-group-item');
+
+            function highlightSection() {
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= (sectionTop - 100)) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                navItems.forEach(item => {
+                    const href = item.getAttribute('href').substring(1);
+                    if (href === currentSection) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightSection);
+            highlightSection(); // Highlight initial section
+        });
+    </script>
+</body>
+</html>
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <i class="fas fa-cube me-2"></i>AIKit
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#overview">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quick-start">Quick Start</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#configuration">Configuration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#use-cases">Use Cases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#useful-links">Useful Links</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#related-services">Related Services</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h1 class="card-title mb-0">
+                            <i class="fas fa-images me-2"></i>ComfyUI Documentation
+                        </h1>
+                    </div>
+                    <div class="card-body">
+                        <section id="overview">
+                            <h2>Overview</h2>
+                            <p>ComfyUI is a powerful and modular stable diffusion GUI and backend. It features a graph/nodes/flowchart based interface for designing and executing advanced image generation workflows.</p>
+                            
+                            <div class="alert alert-info">
+                                <strong>Key Benefits:</strong>
+                                <ul class="mb-0">
+                                    <li>Node-based workflow editor</li>
+                                    <li>Modular and extensible architecture</li>
+                                    <li>Support for custom models and nodes</li>
+                                    <li>Real-time workflow visualization</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section id="quick-start" class="mt-4">
+                            <h2>Quick Start</h2>
+                            <ol>
+                                <li>Access ComfyUI through the AIKit dashboard</li>
+                                <li>Load or create a workflow using the node editor</li>
+                                <li>Configure your models and parameters</li>
+                                <li>Queue your workflow for execution</li>
+                                <li>Monitor progress and download results</li>
+                            </ol>
+                        </section>
+
+                        <section id="configuration" class="mt-4">
+                            <h2>Configuration</h2>
+                            <p>ComfyUI can be configured through various methods:</p>
+                            <ul>
+                                <li><strong>Models:</strong> Place model files in the models directory</li>
+                                <li><strong>Custom Nodes:</strong> Install extensions via the custom nodes manager</li>
+                                <li><strong>Settings:</strong> Modify config files for advanced options</li>
+                                <li><strong>Memory:</strong> Adjust VRAM usage and optimization settings</li>
+                            </ul>
+                        </section>
+
+                        <section id="features" class="mt-4">
+                            <h2>Features</h2>
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="fas fa-project-diagram me-2"></i>Node-Based Editor</h5>
+                                            <p class="card-text">Visual workflow creation with drag-and-drop nodes for complex image generation pipelines.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="fas fa-brain me-2"></i>Model Support</h5>
+                                            <p class="card-text">Support for various AI models including Stable Diffusion, ControlNet, and custom checkpoints.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="fas fa-puzzle-piece me-2"></i>Custom Nodes</h5>
+                                            <p class="card-text">Extensible architecture supporting community-developed custom nodes and extensions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="fas fa-tasks me-2"></i>Queue System</h5>
+                                            <p class="card-text">Efficient batch processing with queue management and progress monitoring.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="use-cases" class="mt-4">
+                            <h2>Use Cases</h2>
+                            <div class="list-group">
+                                <div class="list-group-item">
+                                    <strong>AI Art Generation:</strong> Create stunning artwork using various AI models and techniques
+                                </div>
+                                <div class="list-group-item">
+                                    <strong>Image Processing:</strong> Apply advanced image processing and enhancement workflows
+                                </div>
+                                <div class="list-group-item">
+                                    <strong>Batch Processing:</strong> Process multiple images with consistent settings and workflows
+                                </div>
+                                <div class="list-group-item">
+                                    <strong>Research & Development:</strong> Experiment with new models and techniques in AI image generation
+                                </div>
+                                <div class="list-group-item">
+                                    <strong>Commercial Applications:</strong> Create content for marketing, design, and creative projects
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="useful-links" class="mt-4">
+                            <h2>Useful Links</h2>
+                            <div class="d-grid gap-2">
+                                <a href="https://github.com/comfyanonymous/ComfyUI" class="btn btn-outline-primary" target="_blank">
+                                    <i class="fab fa-github me-2"></i>ComfyUI GitHub Repository
+                                </a>
+                                <a href="https://comfyui.com/" class="btn btn-outline-primary" target="_blank">
+                                    <i class="fas fa-globe me-2"></i>Official Website
+                                </a>
+                                <a href="https://github.com/ltdrdata/ComfyUI-Manager" class="btn btn-outline-primary" target="_blank">
+                                    <i class="fas fa-tools me-2"></i>ComfyUI Manager
+                                </a>
+                                <a href="https://comfyworkflows.com/" class="btn btn-outline-primary" target="_blank">
+                                    <i class="fas fa-share-alt me-2"></i>ComfyWorkflows
+                                </a>
+                            </div>
+                        </section>
+
+                        <section id="related-services" class="mt-4">
+                            <h2>Related Services</h2>
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="fas fa-comments me-2"></i>Open WebUI</h5>
+                                            <p class="card-text">AI chat interface that can integrate with ComfyUI for image generation tasks.</p>
+                                            <a href="openwebui.html" class="btn btn-primary">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="fas fa-book me-2"></i>Jupyter</h5>
+                                            <p class="card-text">Interactive notebooks for developing and testing ComfyUI workflows and models.</p>
+                                            <a href="jupyter.html" class="btn btn-primary">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p>&copy; AIKit Documentation © 2025</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Highlight active section in navigation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
