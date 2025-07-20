@@ -12,8 +12,11 @@ RUN npm install
 # Copy the rest of the application
 COPY . .
 
+# Build TypeScript code
+RUN npm run build
+
 # Expose the port the server runs on
 EXPOSE 3001
 
-# Command to run the server in development mode
-CMD ["npm", "run", "dev"]
+# Command to run the server in production mode
+CMD ["node", "dist/index.js"]

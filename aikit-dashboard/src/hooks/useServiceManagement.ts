@@ -10,7 +10,7 @@ interface ServiceActionResponse {
 export const useServiceManagement = (service: Service) => {
   const [isActionPending, setIsActionPending] = useState(false);
   
-  // Create mutations for each service action
+  // Create mutations for each service action - removing the /api prefix to avoid duplication
   const startMutation = useApiMutation(`/services/${service.containerId}/start`);
   const stopMutation = useApiMutation(`/services/${service.containerId}/stop`);
   const restartMutation = useApiMutation(`/services/${service.containerId}/restart`);

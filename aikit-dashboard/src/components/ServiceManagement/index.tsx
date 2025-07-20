@@ -75,7 +75,7 @@ export const ServiceManagement: React.FC<ServiceManagementProps> = ({
   serviceName
 }) => {
   const { showNotification } = useNotification();
-  const { data: apiData, error: apiError } = useApi<ServiceApiResponse>(`/api/services/${containerId}`);
+  const { data: apiData, error: apiError } = useApi<ServiceApiResponse>(`/services/${containerId}`);
   const [status, setStatus] = useState<ServiceStatusInfo | null>(null);
   const [stats, setStats] = useState<ServiceStatsInfo | null>(null);
   const [isLoading, setIsLoading] = useState(true);

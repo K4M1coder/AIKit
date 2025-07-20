@@ -33,7 +33,7 @@ const Dashboard: React.FC = () => {
     error, 
     refetch,
     currentInterval 
-  } = useApi<ServicesResponse>('/api/services', {
+  } = useApi<ServicesResponse>('/services', {
     autoRefresh: true,
     interval: 5000,      // Start with 5s
     minInterval: 2000,   // Min 2s when issues detected

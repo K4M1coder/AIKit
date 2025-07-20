@@ -14,9 +14,15 @@ import { ServiceManagement } from '../../components/ServiceManagement';
 import { ErrorDisplay } from '../../components/shared/ErrorDisplay';
 import { LoadingDisplay } from '../../components/shared/LoadingDisplay';
 import { useApi } from '../../hooks/useApi';
+import { Service } from '../../types/service';
+
+interface ServicesResponse {
+  success: boolean;
+  data: Service[];
+}
 
 const Services: React.FC = () => {
-  const { data: services, isLoading, error, refetch } = useApi('/api/services');
+  const { data: services, isLoading, error, refetch } = useApi<ServicesResponse>('/services');
 
   if (isLoading) {
     return <LoadingDisplay message="Loading services details..." fullHeight />;
@@ -42,7 +48,7 @@ const Services: React.FC = () => {
       </Fade>
 
       <Grid container spacing={3}>
-        {services?.map((service, index) => (
+        {services?.data?.map((service: Service, index: number) => (
           <Grid item xs={12} key={service.id}>
             <Grow 
               in 
