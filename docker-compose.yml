@@ -350,37 +350,6 @@ services:
       - elasticsearch
       - kibana
 
-  # react-dashboard:
-  #   build:
-  #     context: ./aikit-dashboard
-  #     dockerfile: Dockerfile
-  #   container_name: aikit-react-dashboard
-  #   hostname: react-dashboard
-  #   networks: ["AIKit"]
-  #   restart: unless-stopped
-  #   ports:
-  #     - "8080:80" # Using port 8080 to avoid conflict with the classic dashboard
-  #   depends_on:
-  #     - dashboard-api
-
-  # dashboard-api:
-  #   build:
-  #     context: ./aikit-dashboard/server
-  #   container_name: aikit-dashboard-api
-  #   hostname: server
-  #   networks: ["AIKit"]
-  #   restart: unless-stopped
-  #   ports:
-  #     - "3001:3001"
-  #   volumes:
-  #     - /var/run/docker.sock:/var/run/docker.sock:ro
-  #   environment:
-  #     - PORT=3001
-  #     - DOCKER_SOCKET=/var/run/docker.sock
-  #   user: "root"
-
-  # Static Nginx dashboard removed; React app now replaces it.
-
   react-dashboard:
     build:
       context: ./aikit-dashboard
