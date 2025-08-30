@@ -1,9 +1,5 @@
 # 🚀 Self-hosted AI toolkit
 
-> New in this repo: a containerized React dashboard served on port 80 replaces the legacy static dashboard. It includes RBAC, a services overview, and integrated, React-native docs for each service.
-
- 
-
 **Self-hosted AI Starter Kit** is an open, docker compose template that
 quickly bootstraps a fully featured Local AI and Low Code development
 environment including Open WebUI for an interface to chat with your AI agents and tools.
