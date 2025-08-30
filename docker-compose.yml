@@ -379,22 +379,23 @@ services:
   #     - DOCKER_SOCKET=/var/run/docker.sock
   #   user: "root"
 
-  dashboard:
-    image: nginx:alpine
-    container_name: aikit-dashboard
-    hostname: dashboard
+  # Static Nginx dashboard removed; React app now replaces it.
+
+  react-dashboard:
+    build:
+      context: ./aikit-dashboard
+      dockerfile: Dockerfile
+    container_name: aikit-react-dashboard
+    hostname: react-dashboard
     networks: ["AIKit"]
     restart: unless-stopped
     ports:
       - "80:80"
-    volumes:
-      - ./dashboard:/usr/share/nginx/html
-      - ./dashboard/nginx.conf:/etc/nginx/conf.d/default.conf
-#     depends_on:
-#         - n8n
-#         - open-webui
-#         - flowise
-#         - qdrant
-#         - jupyter
-#         - elasticsearch
-#         - kibana
+    depends_on:
+      - n8n
+      - open-webui
+      - flowise
+      - qdrant
+      - jupyter
+      - elasticsearch
+      - kibana
