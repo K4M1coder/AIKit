@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jupyter Documentation - AIKit</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="../img/favicon.png">
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="row bg-dark text-white py-4">
+            <div class="col-12 text-center">
+                <h1><i class="fas fa-robot"></i> AIKit Documentation</h1>
+                <p class="lead">Internal documentation for AIKit services</p>
+            </div>
+        </header>
+
+        <div class="row my-4">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white d-flex align-items-center">
+                        <img src="https://jupyter.org/favicon.ico" width="24" height="24" alt="Jupyter icon" class="me-2">
+                        <h2 class="mb-0">Jupyter Documentation</h2>
+                    </div>
+                    
+                    <div class="card-body">
+                        <nav aria-label="breadcrumb" class="mb-4">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> Dashboard</a></li>
+                                <li class="breadcrumb-item active">Jupyter Documentation</li>
+                            </ol>
+                        </nav>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="sidebar-nav">
+                                    <div class="list-group mb-4">
+                                        <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                                        <a href="#quickstart" class="list-group-item list-group-item-action">Quick Start</a>
+                                        <a href="#configuration" class="list-group-item list-group-item-action">Configuration</a>
+                                        <a href="#features" class="list-group-item list-group-item-action">Features</a>
+                                        <a href="#usecases" class="list-group-item list-group-item-action">Use Cases</a>
+                                        <a href="#links" class="list-group-item list-group-item-action">Useful Links</a>
+                                        <a href="#related" class="list-group-item list-group-item-action">Related Services</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-9">
+                                <section id="overview">
+                                    <h3>Overview</h3>
+                                    <p>Jupyter is an interactive computing environment that allows you to create and share documents containing live code, equations, visualizations, and narrative text. Perfect for data science, AI experimentation, and research.</p>
+                                </section>
+
+                                <section id="quickstart" class="mt-4">
+                                    <h3>Quick Start</h3>
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <ol class="mb-0">
+                                                <li>Access Jupyter at <a href="http://localhost:8888" class="btn btn-sm btn-primary"><i class="fas fa-external-link-alt"></i> localhost:8888</a></li>
+                                                <li>Enter the token or password if prompted</li>
+                                                <li>Create a new notebook or open an existing one</li>
+                                                <li>Start coding with Python, R, or other kernels</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section id="configuration" class="mt-4">
+                                    <h3>Configuration</h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Environment Variable</th>
+                                                    <th>Value</th>
+                                                    <th>Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>JUPYTER_ENABLE_LAB</code></td>
+                                                    <td>yes</td>
+                                                    <td>Enable JupyterLab interface</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>JUPYTER_PORT</code></td>
+                                                    <td>8888</td>
+                                                    <td>Port for Jupyter web interface</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>JUPYTER_TOKEN</code></td>
+                                                    <td>jupyter</td>
+                                                    <td>Authentication token</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </section>
+
+                                <section id="features" class="mt-4">
+                                    <h3>Features</h3>
+                                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><i class="fas fa-code"></i> Interactive Coding</h5>
+                                                    <p class="card-text">Execute code cells and see results immediately</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><i class="fas fa-chart-bar"></i> Data Visualization</h5>
+                                                    <p class="card-text">Create rich visualizations with matplotlib, plotly, and more</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><i class="fas fa-layer-group"></i> Multiple Kernels</h5>
+                                                    <p class="card-text">Support for Python, R, Scala, and other languages</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><i class="fas fa-share"></i> Shareable Notebooks</h5>
+                                                    <p class="card-text">Export and share notebooks in various formats</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section id="usecases" class="mt-4">
+                                    <h3>Common Use Cases</h3>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><i class="fas fa-chart-line"></i> Data analysis and exploration</li>
+                                        <li class="list-group-item"><i class="fas fa-robot"></i> Machine learning model development</li>
+                                        <li class="list-group-item"><i class="fas fa-chart-bar"></i> Data visualization and reporting</li>
+                                        <li class="list-group-item"><i class="fas fa-graduation-cap"></i> Educational tutorials and workshops</li>
+                                        <li class="list-group-item"><i class="fas fa-flask"></i> Prototyping and experimentation</li>
+                                    </ul>
+                                </section>
+
+                                <section id="links" class="mt-4">
+                                    <h3>Useful Links</h3>
+                                    <div class="d-grid gap-2">
+                                        <a href="https://docs.jupyter.org/" class="btn btn-outline-primary" target="_blank">
+                                            <i class="fas fa-book"></i> Official Documentation
+                                        </a>
+                                        <a href="https://github.com/jupyter/jupyter" class="btn btn-outline-dark" target="_blank">
+                                            <i class="fab fa-github"></i> GitHub Repository
+                                        </a>
+                                        <a href="https://jupyter-notebook.readthedocs.io/" class="btn btn-outline-info" target="_blank">
+                                            <i class="fas fa-play"></i> Notebook Documentation
+                                        </a>
+                                    </div>
+                                </section>
+
+                                <section id="related" class="mt-4">
+                                    <h3>Related Services</h3>
+                                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                                        <!-- Qdrant -->
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        <i class="fas fa-vector-square"></i> Qdrant
+                                                    </h5>
+                                                    <p class="card-text">Vector database for storing and querying embeddings in notebooks</p>
+                                                    <div class="d-flex gap-2">
+                                                        <a href="/docs/qdrant.html" class="btn btn-outline-info">
+                                                            <i class="fas fa-file-alt"></i> Internal Docs
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Ollama -->
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        <i class="fas fa-brain"></i> Ollama
+                                                    </h5>
+                                                    <p class="card-text">Local LLM service for AI experiments in Jupyter notebooks</p>
+                                                    <div class="d-flex gap-2">
+                                                        <a href="/docs/ollama.html" class="btn btn-outline-info">
+                                                            <i class="fas fa-file-alt"></i> Internal Docs
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- GitIngest -->
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        <i class="fab fa-github"></i> GitIngest
+                                                    </h5>
+                                                    <p class="card-text">Code analysis tool for repository research in notebooks</p>
+                                                    <div class="d-flex gap-2">
+                                                        <a href="/docs/gitingest.html" class="btn btn-outline-info">
+                                                            <i class="fas fa-file-alt"></i> Internal Docs
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Elasticsearch -->
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        <i class="fas fa-search"></i> Elasticsearch
+                                                    </h5>
+                                                    <p class="card-text">Search engine for analyzing logs and data in notebooks</p>
+                                                    <div class="d-flex gap-2">
+                                                        <a href="/docs/elasticsearch.html" class="btn btn-outline-info">
+                                                            <i class="fas fa-file-alt"></i> Internal Docs
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">AIKit Documentation &copy; 2025</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('.sidebar-nav .list-group-item');
+
+            function highlightSection() {
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= (sectionTop - 100)) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                navItems.forEach(item => {
+                    const href = item.getAttribute('href').substring(1);
+                    if (href === currentSection) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightSection);
+            highlightSection(); // Highlight initial section
+        });
+    </script>
+</body>
+</html>
