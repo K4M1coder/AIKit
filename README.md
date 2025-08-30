@@ -1,5 +1,29 @@
 # 🚀 Self-hosted AI toolkit
 
+> New in this repo: a containerized React dashboard served on port 80 replaces the legacy static dashboard. It includes RBAC, a services overview, and integrated, React-native docs for each service.
+
+## React Dashboard (Port 80)
+
+The new dashboard is a Vite + React app packaged behind nginx and exposed on <http://localhost/> (port 80).
+
+- RBAC-protected admin sections
+- AI services catalog with status and links
+- Integrated documentation pages (no iframes; content authored in React)
+
+Run it with Docker Compose:
+
+```powershell
+docker compose up -d react-dashboard
+```
+
+Or bring up the whole stack (CPU profile example):
+
+```powershell
+docker compose --profile cpu up -d
+```
+
+The legacy static dashboard and its nginx service have been removed.
+
 **Self-hosted AI Starter Kit** is an open, docker compose template that
 quickly bootstraps a fully featured Local AI and Low Code development
 environment including Open WebUI for an interface to chat with your AI agents and tools.

@@ -5,6 +5,29 @@ All notable changes to the AIKit project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2025-08-30
+
+### Added
+
+- Containerized React dashboard (Vite + React + nginx) served on port 80 via docker-compose `react-dashboard` service
+- Dockerfile and nginx config for SPA routing in `aikit-dashboard/`
+
+### Changed
+
+- Replaced legacy static dashboard with the new React dashboard (RBAC, services overview, integrated docs)
+- Completed React-native documentation parity across all services, including Kibana and Logstash
+- Updated docker-compose to build and serve the React dashboard on port 80
+
+### Removed
+
+- Legacy `dashboard/` static site and its nginx service
+- Unused legacy HTML docs under `aikit-dashboard/public/docs/`
+
+### Fixed
+
+- Ensured internal doc links use SPA routes and external links include appropriate attributes
+- Minor consistency fixes across documentation sections
+
 ## [1.4.0] - 2025-05-06
 
 ### Added
