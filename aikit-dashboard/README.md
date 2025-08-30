@@ -11,4 +11,4 @@ Notes
 
 - RBAC: simple roles via AuthProvider in src/rbac/AuthContext.tsx
 - Services: defined in src/services/aiServices.ts
-- Docs: React-based docs live under src/docs/content and are registered in src/docs/registry.ts. If a service has no React doc, it falls back to the static HTML under public/docs via an iframe.
+- Docs: All documentation is integrated as React components under src/docs/content and registered in src/docs/registry.ts. There are no iframe fallbacks; add a DocConfig entry to extend docs.

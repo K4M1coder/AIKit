@@ -66,20 +66,17 @@ function ServiceList() {
 function ServiceDocPage({ id }: { id: string }) {
   const service = aiServices.find(s => s.id === id);
   if (!service) return <div>Service not found</div>;
-  // Prefer React-based docs if available, else fallback to static HTML iframe
   const reactDoc = docRegistry[id];
-  if (reactDoc) {
-    return <DocLayout config={reactDoc} />;
+  if (!reactDoc) {
+    return (
+      <div className="container py-4">
+        <div className="alert alert-warning" role="alert">
+          Documentation for <strong>{service.name}</strong> isn't available yet.
+        </div>
+      </div>
+    );
   }
-  return (
-    <div>
-      <iframe
-        src={`/docs/${service.docFile}`}
-        title={service.name + ' docs'}
-        style={{ width: '100%', height: '80vh', border: '1px solid #ccc', background: '#fff' }}
-      />
-    </div>
-  );
+  return <DocLayout config={reactDoc} />;
 }
 
 function AdminPage() {
